@@ -6,10 +6,7 @@ const url = require('url');
 const server = http.createServer((req, res) => {
     const parsedUrl = url.parse(req.url, true);
     
-    if (parsedUrl.pathname === '/' && req.method === 'GET') {
-        res.writeHead(200, { 'Content-Type': 'text/plain' });
-        res.end('Welcome to the root path!');
-    } else if (parsedUrl.pathname === '/search' && req.method === 'GET') {
+    if (parsedUrl.pathname === '/search' && req.method === 'GET') {
         const query = parsedUrl.query.q || '';
         // Dummy response for illustration
         res.writeHead(200, { 'Content-Type': 'application/json' });

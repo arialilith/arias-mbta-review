@@ -18,18 +18,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const fetch = require('node-fetch');
 
     async function searchPlants(query) {
-        const url = `http://localhost:3000/search?q=${encodeURIComponent(query)}`;
-    
         try {
-            const response = await fetch(url);
+            const response = await fetch(`http://localhost:3000/search?q=${encodeURIComponent(query)}`);
             if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
             const data = await response.json();
-            displayResults(data.data);
+            console.log(data); // Handle the data as needed
         } catch (error) {
             console.error('Error fetching data:', error);
-            resultsContainer.innerHTML = 'Error fetching data. Please try again later.';
         }
     }
     
