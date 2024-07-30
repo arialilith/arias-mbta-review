@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plant Database</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
 <body>
     <section id="landing">
@@ -15,10 +16,13 @@
             </div>
             <div class="right">
                 <div class="search-bar">
-                    <input type="text" placeholder="Search for plants...">
+                    <input id="search-input" type="text" placeholder="Search for plants...">
+                    <button id="search-button">Search</button>
                 </div>
             </div>
+            <div id="results-container"></div>
         </div>
     </section>
+    <script src="scripts/main.js"></script>
 </body>
 </html>
