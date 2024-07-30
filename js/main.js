@@ -16,18 +16,14 @@ document.addEventListener('DOMContentLoaded', () => {
         displayResults(results);
     });
 
-    const corsAnywhereUrl = 'https://cors-anywhere.herokuapp.com/';
-    const trefleApiUrl = 'https://trefle.io/api/v1/plants?token=0EnoKeLAoYW5UKcMXgxeYOh7F8RFO20q1UdfbIzC0oA';
-    const url = corsAnywhereUrl + trefleApiUrl;
-
     async function searchPlants(query) {
         try {
-            const response = await fetch(url);
+            const response = await fetch(`https://trefle.io/api/v1/plants?token=0EnoKeLAoYW5UKcMXgxeYOh7F8RFO20q1UdfbIzC0oA&q=${encodeURIComponent(query)}`);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             const data = await response.json();
-            console.log(data); // Handle the data as needed
+            displayResults(data); // Ensure this function is defined and correctly handles the data
         } catch (error) {
             console.error('Error fetching data:', error);
         }
