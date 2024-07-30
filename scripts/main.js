@@ -17,14 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
             searchPlants(query);
         }
     });
-    
-    const PROXY_URL = 'https://cors-anywhere.herokuapp.com/';
-    const API_URL = 'https://trefle.io/api/v1/plants/search';
-    const API_KEY = '0EnoKeLAoYW5UKcMXgxeYOh7F8RFO20q1UdfbIzC0oA';
 
     async function searchPlants(query) {
-        const url = `${PROXY_URL}${API_URL}?token=${API_KEY}&q=${encodeURIComponent(query)}`;
-    
+        const API_KEY = '0EnoKeLAoYW5UKcMXgxeYOh7F8RFO20q1UdfbIzC0oA';
+        const BASE_URL = 'https://trefle.io/api/v1/plants/search';
+        const url = `${BASE_URL}?token=${API_KEY}&q=${encodeURIComponent(query)}`;
+
         try {
             const response = await fetch(url);
             if (!response.ok) {
