@@ -11,9 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
     searchButton.addEventListener('click', () => {
         const query = searchInput.value.trim();
         if (query) {
-            results = searchPlants(query);
+            searchPlants(query);
         }
-        displayResults(results);
     });
 
     async function searchPlants(query) {
