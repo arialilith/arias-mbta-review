@@ -11,15 +11,18 @@ document.addEventListener('DOMContentLoaded', () => {
     searchButton.addEventListener('click', () => {
         const query = searchInput.value.trim();
         if (query) {
-            searchPlants(query);
+            results = searchPlants(query);
         }
+        displayResults(results);
     });
 
-    const fetch = require('node-fetch');
+    const corsAnywhereUrl = 'https://cors-anywhere.herokuapp.com/';
+    const trefleApiUrl = 'https://trefle.io/api/v1/plants?token=0EnoKeLAoYW5UKcMXgxeYOh7F8RFO20q1UdfbIzC0oA';
+    const url = corsAnywhereUrl + trefleApiUrl;
 
     async function searchPlants(query) {
         try {
-            const response = await fetch(`http://localhost:3000/search?q=${encodeURIComponent(query)}`);
+            const response = await fetch(url);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
