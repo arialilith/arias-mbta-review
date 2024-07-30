@@ -1,10 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const searchButton = document.getElementById('search-button');
     const searchInput = document.getElementById('search-input');
-    const resultsContainer = document.getElementById('results-container');
-
-    console.log(searchButton); // Check if this logs the button element
-    console.log(searchInput);  // Check if this logs the input element
+    const resultsContainer = document.getElementById('results-container');// Check if this logs the input element
 
     if (!searchButton || !searchInput) {
         console.error('One or more elements not found!');
