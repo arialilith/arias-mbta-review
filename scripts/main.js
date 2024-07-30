@@ -15,13 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    const PROXY_URL = 'https://cors-anywhere.herokuapp.com/';
-    const API_URL = 'https://trefle.io/api/v1/plants/search';
-    const API_KEY = '0EnoKeLAoYW5UKcMXgxeYOh7F8RFO20q1UdfbIzC0oA';
-
     async function searchPlants(query) {
-        const url = `${PROXY_URL}${API_URL}?token=${API_KEY}&q=${encodeURIComponent(query)}`;
-
+        const url = `http://localhost:3000/search?q=${encodeURIComponent(query)}`;
+    
         try {
             const response = await fetch(url);
             if (!response.ok) {
@@ -34,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             resultsContainer.innerHTML = 'Error fetching data. Please try again later.';
         }
     }
+    
 
     function displayResults(plants) {
         resultsContainer.innerHTML = ''; // Clear previous results
