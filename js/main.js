@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function searchPlants(query) {
         try {
-            const response = await fetch(`https://trefle.io/api/v1/plants?token=0EnoKeLAoYW5UKcMXgxeYOh7F8RFO20q1UdfbIzC0oA&q=${encodeURIComponent(query)}`);
+            const response = await fetch(`const url = 'https://cors-anywhere.herokuapp.com/https://trefle.io/api/v1/plants?token=0EnoKeLAoYW5UKcMXgxeYOh7F8RFO20q1UdfbIzC0oA&q=monstera';`);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
