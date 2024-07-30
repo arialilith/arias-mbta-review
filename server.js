@@ -1,5 +1,25 @@
 const express = require('express');
 const fetch = require('node-fetch');
+const http = require('http');
+const url = require('url');
+
+const server = http.createServer((req, res) => {
+    const parsedUrl = url.parse(req.url, true);
+    
+    if (parsedUrl.pathname === '/' && req.method === 'GET') {
+        res.writeHead(200, { 'Content-Type': 'text/plain' });
+        res.end('Welcome to the root path!');
+    } else if (parsedUrl.pathname === '/search' && req.method === 'GET') {
+        const query = parsedUrl.query.q || '';
+        // Dummy response for illustration
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ message: `Search query received: ${query}` }));
+    } else {
+        res.writeHead(404, { 'Content-Type': 'text/plain' });
+        res.end('Not Found');
+    }
+});
+
 const app = express();
 const PORT = 3000;
 

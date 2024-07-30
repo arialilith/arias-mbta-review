@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    const fetch = require('node-fetch');
+
     async function searchPlants(query) {
         const url = `http://localhost:3000/search?q=${encodeURIComponent(query)}`;
     
