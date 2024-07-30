@@ -3,14 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('search-input');
     const resultsContainer = document.getElementById('results-container');
 
-    console.log(searchButton); // Check if this logs the button element
-    console.log(searchInput);  // Check if this logs the input element
-
-    if (!searchButton || !searchInput) {
-        console.error('One or more elements not found!');
-        return;
-    }
-
     searchButton.addEventListener('click', () => {
         const query = searchInput.value.trim();
         if (query) {
@@ -18,10 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    const PROXY_URL = 'https://cors-anywhere.herokuapp.com/';
+    const API_URL = 'https://trefle.io/api/v1/plants/search';
+
     async function searchPlants(query) {
-        const API_KEY = '0EnoKeLAoYW5UKcMXgxeYOh7F8RFO20q1UdfbIzC0oA';
-        const BASE_URL = 'https://trefle.io/api/v1/plants/search';
-        const url = `${BASE_URL}?token=${API_KEY}&q=${encodeURIComponent(query)}`;
+        const url = `${PROXY_URL}${API_URL}?token=${API_KEY}&q=${encodeURIComponent(query)}`;
 
         try {
             const response = await fetch(url);
