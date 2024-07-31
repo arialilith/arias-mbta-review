@@ -2,6 +2,8 @@
 body, html {
     margin: 0;
     padding: 0;
+    height: 100%;
+    width: 100%;
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
@@ -41,7 +43,8 @@ a:hover {
     background-repeat: no-repeat;
     background-size: auto;
     position: absolute;
-    right: 300px;
+    left: 350px;
+    top: 0px
 }
 
 .grid-container {
@@ -62,7 +65,8 @@ a:hover {
 .orangeline-grid {
     background-image: url("../img/orangeline.png");
     background-repeat: no-repeat;
-    grid-template-columns: repeat(9, 1fr);
+    grid-template-columns: repeat(11, 1fr);
+    background-position: 270px;
 }
 
 .redline-grid {
@@ -74,7 +78,8 @@ a:hover {
 .blueline-grid {
     background-image: url("../img/blueline.png");
     background-repeat: no-repeat;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    background-position: 270px;
 }
 
 .grid-item {
@@ -119,10 +124,10 @@ a:hover {
 .popup {
     display: none;
     position: absolute;
-    left: 350px;
-    top: 200px;
+    left: 100px;
+    top: 500px;
     width: 600px;
-    height: 500px;
+    height: 300px;
     padding: 20px;
     background: #0B0C08;
     color: #CECCCC;
