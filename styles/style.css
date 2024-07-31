@@ -159,7 +159,7 @@ a:hover {
 }
 
 .popup-overlay.open {
-    display: block; /* Show when open */
+    display: block;
 }
 
 .popup-close {
