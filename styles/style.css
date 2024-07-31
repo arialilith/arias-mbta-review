@@ -10,6 +10,16 @@ body, html {
     font-family: "Kode Mono", monospace;
 }
 
+a {
+    color: inherit; /* This sets the link color to inherit the color from its parent element */
+    text-decoration: none; /* This removes the underline from the links */
+}
+
+a:hover {
+    color: #80909D; /* This ensures the color remains unchanged on hover */
+    text-decoration: underline; /* This ensures the underline remains removed on hover */
+}
+
 .page-header {
     position: absolute;
     top: 0;
@@ -19,16 +29,15 @@ body, html {
 }
 
 .page-header h1 {
-    font-size: 100px;
+    font-size: 60px;
 }
 
 .page-header h2 {
-    font-size: 50px;
+    font-size: 30px;
 }
 
 .map-container {
-    background-image: url("../img/greenline.png");
-    background-position: center center;
+    background-position: center 215px;
     background-repeat: no-repeat;
     background-size: auto;
     position: absolute;
@@ -39,19 +48,39 @@ body, html {
     margin-top: 200px;
     margin-bottom: 200px;
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto auto;
     gap: 10px;
+    font-weight: bold;
+}
+
+.greenline-grid {
+    background-image: url("../img/greenline.png");
+    background-repeat: no-repeat;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.orangeline-grid {
+    background-image: url("../img/orangeline.png");
+    background-repeat: no-repeat;
+    grid-template-columns: repeat(9, 1fr);
+}
+
+.redline-grid {
+    background-image: url("../img/redline.png");
+    background-repeat: no-repeat;
+    grid-template-columns: repeat(15, 1fr);
+}
+
+.blueline-grid {
+    background-image: url("../img/blueline.png");
+    background-repeat: no-repeat;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .grid-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.grid-item .text {
-    margin-bottom: 10px; /* Adjust the space between text and clickable element */
 }
 
 .grid-item .clickable {
@@ -62,8 +91,8 @@ body, html {
 }
 
 .clickable {
-    background-color: #CECCCC;
-    color: #0F110C;
+    background: #0B0C08;
+    color: #CECCCC;
     padding: 12px;
     text-align: center;
     height: 50px;
@@ -71,30 +100,61 @@ body, html {
     border-radius: 8px;
 }
 
+.greenline-grid .clickable {
+    border: 1px solid #21A179;
+}
+
+.orangeline-grid .clickable {
+    border: 1px solid #F26419;
+}
+
+.redline-grid .clickable {
+    border: 1px solid #D00000;
+}
+
+.blueline-grid .clickable {
+    border: 1px solid #25CED1;
+}
+
 .popup {
-    display: none; /* Hidden by default */
+    display: none;
     position: absolute;
-    left: 200px;
-    top: 500px;
-    width: 1000px;
-    height: 1000px;
+    left: 350px;
+    top: 200px;
+    width: 600px;
+    height: 500px;
     padding: 20px;
-    background: white;
+    background: #0B0C08;
+    color: #CECCCC;
     z-index: 1000;
-    font-size: 40px;
+    font-size: 20px;
+}
+
+.greenline-popup {
+    border: 1px solid #21A179;
+}
+
+.orangeline-popup {
+    border: 1px solid #F26419;
+}
+
+.redline-popup {
+    border: 1px solid #D00000;
+}
+
+.blueline-popup {
+    border: 1px solid #25CED1;
 }
 
 .popup.open {
-    display: block; /* Show when open */
+    display: block;
 }
 
 .popup-overlay {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
     z-index: 999;
 }
 
