@@ -44,7 +44,7 @@ a:hover {
     background-size: auto;
     position: absolute;
     left: 350px;
-    top: 0px
+    top: 0px;
 }
 
 .grid-container {
@@ -57,29 +57,27 @@ a:hover {
 }
 
 .greenline-grid {
-    background-image: url("../img/greenline.png");
     background-repeat: no-repeat;
+    background-size: 90vh;
     grid-template-columns: repeat(12, 1fr);
 }
 
 .orangeline-grid {
-    background-image: url("../img/orangeline.png");
     background-repeat: no-repeat;
+    background-size: contain;
     grid-template-columns: repeat(11, 1fr);
-    background-position: 270px;
 }
 
 .redline-grid {
-    background-image: url("../img/redline.png");
     background-repeat: no-repeat;
+    background-size: contain;
     grid-template-columns: repeat(15, 1fr);
 }
 
 .blueline-grid {
-    background-image: url("../img/blueline.png");
     background-repeat: no-repeat;
+    background-size: contain;
     grid-template-columns: repeat(5, 1fr);
-    background-position: 270px;
 }
 
 .grid-item {
@@ -91,8 +89,6 @@ a:hover {
 .grid-item .clickable {
     padding: 12px;
     text-align: center;
-    height: 50px;
-    width: 100px;
 }
 
 .clickable {
@@ -100,9 +96,10 @@ a:hover {
     color: #CECCCC;
     padding: 12px;
     text-align: center;
-    height: 50px;
-    width: 100px;
+    height: 3vh;
+    width: 3vw;
     border-radius: 8px;
+    font-size: 1vh;
 }
 
 .greenline-grid .clickable {
