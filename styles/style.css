@@ -53,21 +53,21 @@ a:hover {
 }
 
 .greenline-grid {
-    background-repeat: no-repeat;
-    background-size: 90vh;
-    grid-template-columns: repeat(12, 1fr);
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .orangeline-grid {
-    background-repeat: no-repeat;
-    background-size: contain;
-    grid-template-columns: repeat(11, 1fr);
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .redline-grid {
-    background-repeat: no-repeat;
-    background-size: contain;
-    grid-template-columns: repeat(15, 1fr);
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .blueline-grid {
