@@ -43,6 +43,9 @@ a:hover {
 .stations-wrapper {
     grid-column: 2 / 4;
     grid-row: 1 / 4;
+}
+
+.stations {
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -62,18 +65,24 @@ a:hover {
     background: #0B0C08;
     color: #CECCCC;
     padding: 12px;
-    text-align: center;
     border-radius: 8px;
-    width: 10%;
-    min-width: 70px;
-    height: 5%;
+    height: 50px;
+    width: 100px;
     margin: 10px;
     font-family: "Kode Mono";
+    display: table; 
 }
 
 .clickable:hover {
     background: #353535;
     cursor: pointer;
+}
+
+.clickable p {
+    overflow-wrap: break-word;
+    text-align:center; 
+    vertical-align: middle;
+    display: table-cell;   
 }
 
 .greenline-grid .clickable {
