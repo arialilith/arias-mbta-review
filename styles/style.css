@@ -43,6 +43,11 @@ a:hover {
 .stations-wrapper {
     grid-column: 2 / 4;
     grid-row: 1 / 4;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-width: 600px;
+    overflow-x: auto;
 }
 
 .review-wrapper {
@@ -52,42 +57,15 @@ a:hover {
     padding-left: 1vw;
 }
 
-.greenline-grid {
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.orangeline-grid {
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.redline-grid {
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.blueline-grid {
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.grid-item .clickable {
-    padding: 12px;
-    text-align: center;
-}
-
 .clickable {
+    overflow-wrap: break-word;
     background: #0B0C08;
     color: #CECCCC;
     padding: 12px;
     text-align: center;
     border-radius: 8px;
     width: 10%;
+    min-width: 70px;
     height: 5%;
     margin: 10px;
     font-family: "Kode Mono";
