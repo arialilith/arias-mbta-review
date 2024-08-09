@@ -1,27 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     const clickableItems = document.querySelectorAll('.clickable');
-    const popup = document.querySelector('.popup');
-    const popupOverlay = document.querySelector('.popup-overlay');
-    const popupTitle = document.getElementById('popup-title');
-    const popupContent = document.getElementById('popup-content');
-    const popupClose = document.querySelector('.popup-close');
+    const title = document.getElementById('review-title');
+    const content = document.getElementById('review-content');
 
     clickableItems.forEach(item => {
         item.addEventListener('click', () => {
-            popupTitle.textContent = item.textContent;
-            popupContent.textContent = item.getAttribute('data-content');
-            popup.classList.add('open');
-            popupOverlay.classList.add('open');
+            title.textContent = item.textContent;
+            content.textContent = item.getAttribute('data-content');
         });
-    });
-
-    popupOverlay.addEventListener('click', () => {
-        popup.classList.remove('open');
-        popupOverlay.classList.remove('open');
-    });
-
-    popupClose.addEventListener('click', () => {
-        popup.classList.remove('open');
-        popupOverlay.classList.remove('open');
     });
 });
