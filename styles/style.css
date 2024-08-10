@@ -64,13 +64,12 @@ a:hover {
     overflow-wrap: break-word;
     background: #0B0C08;
     color: #CECCCC;
-    padding: 12px;
     border-radius: 8px;
-    height: 50px;
-    width: 100px;
-    margin: 10px;
+    height: 50px !important;
+    width: 100px !important;
     font-family: "Kode Mono";
-    display: table; 
+    padding: 12px;
+    margin: 10px;
 }
 
 .clickable:hover {
@@ -79,10 +78,9 @@ a:hover {
 }
 
 .clickable p {
+    margin: 0;
+    padding: 0;
     overflow-wrap: break-word;
-    text-align:center; 
-    vertical-align: middle;
-    display: table-cell;   
 }
 
 .greenline-grid .clickable {
